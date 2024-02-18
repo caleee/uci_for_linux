@@ -1,0 +1,9 @@
+/usr/include/uci.h
+/usr/include/uci_config.h
+/usr/include/uci_blob.h
+/usr/include/ucimap.h
+/usr/lib/libuci.so
+/usr/bin/uci
+/usr/bin/uci.sh
+/usr/lib/lua/5.1/uci.so
+/etc/config/test

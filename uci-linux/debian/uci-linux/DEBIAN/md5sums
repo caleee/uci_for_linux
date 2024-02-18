@@ -1,0 +1,10 @@
+561d74dfdae1ea55c7908d3d088eeb39  usr/bin/uci
+d4daec337aa84ea638bc64bbe7bc850f  usr/bin/uci.sh
+5764ec69de79350b3601a7d637a45580  usr/include/uci.h
+f4cfc2279845a18492c102cf4a2cb3cb  usr/include/uci_blob.h
+6bebbed6204dc1a82b09f98492681fbd  usr/include/uci_config.h
+a6f312f5ddb37e462994f45941182865  usr/include/ucimap.h
+5fbe0c92ce073657735522d927929c8f  usr/lib/libuci.so
+bc0a2db452d35464677c10420bc34f5c  usr/lib/lua/5.1/uci.so
+a017885d2a22a014b43a3ba4104e874e  usr/share/doc/uci-linux/changelog.gz
+b1bfa4f3c16579feeeeaf1c6ac29111f  usr/share/doc/uci-linux/copyright

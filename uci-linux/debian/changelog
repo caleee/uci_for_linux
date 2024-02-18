@@ -1,0 +1,5 @@
+uci-linux (1.0.0) UNRELEASED; urgency=medium
+
+  * First release of uci-linux compiled for Ubuntu 22.04
+
+ -- caleee <caolei@mail.com>  Sun, 18 Feb 2024 01:48:10 +0000

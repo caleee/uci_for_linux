@@ -1,0 +1,18 @@
+Source: uci-linux
+Section: unknown
+Priority: extra
+Maintainer: caleee <caolei@mail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+#Vcs-Browser: https://salsa.debian.org/debian/uci-linux
+#Vcs-Git: https://salsa.debian.org/debian/uci-linux.git
+Rules-Requires-Root: no
+
+Package: uci-linux
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: UCI (Unified Configuration Interface) - for Ubuntu 22.04
+ This package contains the UCI (Unified Configuration Interface), a centralised
+ configuration management system for embedded devices. The UCI system offers
+ simple, abstracted access to a device’s complete configuration. This specific
+ implementation has been compiled for use on Ubuntu 22.04.

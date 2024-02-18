@@ -1,0 +1,13 @@
+Package: uci-linux
+Version: 1.0.0
+Architecture: amd64
+Maintainer: caleee <caolei@mail.com>
+Installed-Size: 154
+Depends: libc6 (>= 2.34)
+Section: unknown
+Priority: extra
+Description: UCI (Unified Configuration Interface) - for Ubuntu 22.04
+ This package contains the UCI (Unified Configuration Interface), a centralised
+ configuration management system for embedded devices. The UCI system offers
+ simple, abstracted access to a device’s complete configuration. This specific
+ implementation has been compiled for use on Ubuntu 22.04.

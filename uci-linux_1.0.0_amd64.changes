@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Sun, 18 Feb 2024 01:48:10 +0000
+Source: uci-linux
+Binary: uci-linux
+Built-For-Profiles: noudeb
+Architecture: source amd64
+Version: 1.0.0
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: caleee <caolei@mail.com>
+Changed-By: caleee <caolei@mail.com>
+Description:
+ uci-linux  - UCI (Unified Configuration Interface) - for Ubuntu 22.04
+Changes:
+ uci-linux (1.0.0) UNRELEASED; urgency=medium
+ .
+   * First release of uci-linux compiled for Ubuntu 22.04
+Checksums-Sha1:
+ 6f97f70337bcfe4f1670875dfa2aa2ad10c78e33 511 uci-linux_1.0.0.dsc
+ ced5bab894a217b83f710f193f170a1314497cda 223814 uci-linux_1.0.0.tar.gz
+ b695933b74a9b15383c6a77b8a618ce2612f58bd 121936 uci-linux-dbgsym_1.0.0_amd64.ddeb
+ 0a3e5391fb37448b309e3692482bb8bd14a8e811 6362 uci-linux_1.0.0_amd64.buildinfo
+ 12a83b81e8e8f9197840f8901dbb0f4263ff98dd 40560 uci-linux_1.0.0_amd64.deb
+Checksums-Sha256:
+ f9ebedf0d131c3029318d6d913662fd3983c67d089055d326f40e2e97522589a 511 uci-linux_1.0.0.dsc
+ 133910058a14a6b4ed117f1a8ee5d8b31d1077b4f18f8404d89392b38848321c 223814 uci-linux_1.0.0.tar.gz
+ 0466478ac84592f2a9fd3bd802dc965140ae6145e2f8ae03f6f5f07b700d5f8a 121936 uci-linux-dbgsym_1.0.0_amd64.ddeb
+ 74c4ddd267d3d3e8e3fcf17c3e9c9f608450bfd115346f6ca4d3fb82a6d13b44 6362 uci-linux_1.0.0_amd64.buildinfo
+ 45e9fed2211f78eb36335eed76b8cce523795a93bef9433e0bc642200364d9eb 40560 uci-linux_1.0.0_amd64.deb
+Files:
+ f80514a70628f85b02ee9c770223e7ac 511 unknown extra uci-linux_1.0.0.dsc
+ 4e63dc6bb1158bd1440707e63cbe2975 223814 unknown extra uci-linux_1.0.0.tar.gz
+ 38b6d030c4e9209660ae23b9b90238cd 121936 debug optional uci-linux-dbgsym_1.0.0_amd64.ddeb
+ eb11291f76e806514b4dd5912bb62fc7 6362 unknown extra uci-linux_1.0.0_amd64.buildinfo
+ dc7e37a5cd3137d98e0c561c4cc48167 40560 unknown extra uci-linux_1.0.0_amd64.deb

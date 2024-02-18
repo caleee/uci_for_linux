@@ -1,0 +1,3 @@
+
+config test 'config'
+        option success 'yes'
