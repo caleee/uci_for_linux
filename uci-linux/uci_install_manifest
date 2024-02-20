@@ -4,6 +4,6 @@
 /usr/include/ucimap.h
 /usr/lib/libuci.so
 /usr/bin/uci
-/usr/bin/uci.sh
+/usr/lib/uci.sh
 /usr/lib/lua/5.1/uci.so
 /etc/config/test

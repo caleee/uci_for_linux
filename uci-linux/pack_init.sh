@@ -29,7 +29,7 @@ cat << 'EOF' > "${SOURCE_DIR}"/uci_install_manifest
 /usr/include/ucimap.h
 /usr/lib/libuci.so
 /usr/bin/uci
-/usr/bin/uci.sh
+/usr/lib/uci.sh
 /usr/lib/lua/5.1/uci.so
 /etc/config/test
 EOF
@@ -254,19 +254,19 @@ function install {
     # Install the header files
     cp "$CURRENT_DIR"/uci*.h $INCLUDE_DIR/
 
-    # Install the library files
-    cp "$CURRENT_DIR"/libuci.so $LIB_DIR/
-
     # Install the binary
     cp "$CURRENT_DIR"/uci $BIN_DIR/
-    cp "$CURRENT_DIR"/uci.sh $BIN_DIR/
+    cp "$CURRENT_DIR"/uci.sh $LIB_DIR/
+
+    # Install the library files
+    cp "$CURRENT_DIR"/libuci.so $LIB_DIR/
 
     # Install the lua files
     mkdir -p $LUA_LIB_DIR
     cp "$CURRENT_DIR"/uci.so $LUA_LIB_DIR/
 
     # Make the binary executable
-    chmod +x $BIN_DIR/uci $BIN_DIR/uci.sh
+    chmod +x $BIN_DIR/uci $LIB_DIR/uci.sh
 
     # Create a configuration file directory
     [ -d $CONFIG_DIR ] || mkdir $CONFIG_DIR
@@ -284,7 +284,7 @@ function remove {
 
     # remove the binary
     rm $BIN_DIR/uci
-    rm $BIN_DIR/uci.sh
+    rm $LIB_DIR/uci.sh
 
     # remove the lua files
     rm $LUA_LIB_DIR/uci.so
@@ -314,12 +314,11 @@ case "$1" in
         echo "Unknown argument. Please use './setup.sh install' for installation or './setup.sh remove' for removal."
         ;;
 esac
-
 EOF
 cat << 'EOF' > "${SOURCE_DIR}"/Makefile
 # Variables
-BINDIR := $(DESTDIR)/usr/bin
 INCDIR := $(DESTDIR)/usr/include
+BINDIR := $(DESTDIR)/usr/bin
 LIBDIR := $(DESTDIR)/usr/lib
 LUADIR := $(DESTDIR)/usr/lib/lua/5.1
 CONDIR := $(DESTDIR)/etc/config
@@ -328,7 +327,7 @@ install:
 	mkdir -p $(BINDIR) $(INCDIR) $(LUADIR) $(CONDIR)
 	cp uci*.h $(INCDIR)
 	cp uci $(BINDIR)
-	cp uci.sh $(BINDIR)
+	cp uci.sh $(LIBDIR)
 	cp libuci.so $(LIBDIR)
 	cp uci.so $(LUADIR)
 	cp "test" $(CONDIR)
@@ -344,4 +343,3 @@ chmod +x "${SOURCE_DIR}"/*.sh
 
 # 打印消息
 echo "Source files have been collected."
-
