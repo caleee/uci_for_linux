@@ -1,0 +1,17 @@
+/tmp/uci_for_linux/uci/CMakeFiles/uci.dir
+/tmp/uci_for_linux/uci/CMakeFiles/uci-static.dir
+/tmp/uci_for_linux/uci/CMakeFiles/cli.dir
+/tmp/uci_for_linux/uci/CMakeFiles/ucimap.dir
+/tmp/uci_for_linux/uci/CMakeFiles/edit_cache.dir
+/tmp/uci_for_linux/uci/CMakeFiles/rebuild_cache.dir
+/tmp/uci_for_linux/uci/CMakeFiles/list_install_components.dir
+/tmp/uci_for_linux/uci/CMakeFiles/install.dir
+/tmp/uci_for_linux/uci/CMakeFiles/install/local.dir
+/tmp/uci_for_linux/uci/CMakeFiles/install/strip.dir
+/tmp/uci_for_linux/uci/lua/CMakeFiles/uci_lua.dir
+/tmp/uci_for_linux/uci/lua/CMakeFiles/edit_cache.dir
+/tmp/uci_for_linux/uci/lua/CMakeFiles/rebuild_cache.dir
+/tmp/uci_for_linux/uci/lua/CMakeFiles/list_install_components.dir
+/tmp/uci_for_linux/uci/lua/CMakeFiles/install.dir
+/tmp/uci_for_linux/uci/lua/CMakeFiles/install/local.dir
+/tmp/uci_for_linux/uci/lua/CMakeFiles/install/strip.dir

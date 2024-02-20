@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/cli.dir/cli.c.o -o uci  -Wl,-rpath,/tmp/uci_for_linux/uci:/usr/local/lib: libuci.so /usr/local/lib/libubox.so 

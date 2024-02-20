@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared  -o uci.so CMakeFiles/uci_lua.dir/uci.c.o   -L/tmp/uci_for_linux/uci/lua/..  -Wl,-rpath,/tmp/uci_for_linux/uci/lua/..:/tmp/uci_for_linux/uci:/usr/local/lib: ../libuci.so -ldl /usr/local/lib/libubox.so 
