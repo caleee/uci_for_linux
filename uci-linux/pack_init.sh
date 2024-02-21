@@ -7,18 +7,20 @@
 
 CURRENT_DIR=$(dirname "$(readlink -f "$0")")
 SOURCE_DIR="$(realpath "${CURRENT_DIR}/../uci-linux/")"
+LIBUBOX_DIR="$(realpath "${CURRENT_DIR}/../libubox/")"
 
 mkdir -p "${SOURCE_DIR}"
 
 # 复制文件
-cp uci.h "${SOURCE_DIR}"
-cp uci_config.h "${SOURCE_DIR}"
-cp uci_blob.h "${SOURCE_DIR}"
-cp ucimap.h "${SOURCE_DIR}"
-cp libuci.so "${SOURCE_DIR}"
-cp uci "${SOURCE_DIR}"
-cp lua/uci.so "${SOURCE_DIR}"
-cp pack_init.sh "${SOURCE_DIR}"
+cp --preserve=timestamps uci.h "${SOURCE_DIR}"
+cp --preserve=timestamps uci_config.h "${SOURCE_DIR}"
+cp --preserve=timestamps uci_blob.h "${SOURCE_DIR}"
+cp --preserve=timestamps ucimap.h "${SOURCE_DIR}"
+cp --preserve=timestamps libuci.so "${SOURCE_DIR}"
+cp --preserve=timestamps uci "${SOURCE_DIR}"
+cp --preserve=timestamps lua/uci.so "${SOURCE_DIR}"
+cp --preserve=timestamps pack_init.sh "${SOURCE_DIR}"
+cp --preserve=timestamps "$LIBUBOX_DIR"/libubox.so "${SOURCE_DIR}"
 
 # 创建文件
 printf "\n%s\n\t%s\n" "config test 'config'" "option success 'yes'" | expand -t8 > "${SOURCE_DIR}"/test
@@ -28,6 +30,7 @@ cat << 'EOF' > "${SOURCE_DIR}"/uci_install_manifest
 /usr/include/uci_blob.h
 /usr/include/ucimap.h
 /usr/lib/libuci.so
+/usr/lib/libubox.so
 /usr/bin/uci
 /usr/lib/uci.sh
 /usr/lib/lua/5.1/uci.so
@@ -252,25 +255,26 @@ CONFIG_DIR="/etc/config"
 
 function install {
     # Install the header files
-    cp "$CURRENT_DIR"/uci*.h $INCLUDE_DIR/
+    cp --preserve=timestamps "$CURRENT_DIR"/uci*.h $INCLUDE_DIR/
 
     # Install the binary
-    cp "$CURRENT_DIR"/uci $BIN_DIR/
-    cp "$CURRENT_DIR"/uci.sh $LIB_DIR/
+    cp --preserve=timestamps "$CURRENT_DIR"/uci $BIN_DIR/
 
     # Install the library files
-    cp "$CURRENT_DIR"/libuci.so $LIB_DIR/
+    cp --preserve=timestamps "$CURRENT_DIR"/uci.sh $LIB_DIR/
+    cp --preserve=timestamps "$CURRENT_DIR"/libuci.so $LIB_DIR/
+    cp --preserve=timestamps "$CURRENT_DIR"/libubox.so $LIB_DIR/
 
     # Install the lua files
     mkdir -p $LUA_LIB_DIR
-    cp "$CURRENT_DIR"/uci.so $LUA_LIB_DIR/
+    cp --preserve=timestamps "$CURRENT_DIR"/uci.so $LUA_LIB_DIR/
 
     # Make the binary executable
     chmod +x $BIN_DIR/uci $LIB_DIR/uci.sh
 
     # Create a configuration file directory
     [ -d $CONFIG_DIR ] || mkdir $CONFIG_DIR
-    cp "$CURRENT_DIR"/test $CONFIG_DIR/
+    cp --preserve=timestamps "$CURRENT_DIR"/test $CONFIG_DIR/
 
     echo "Installation completed."
 }
@@ -280,11 +284,12 @@ function remove {
     rm $INCLUDE_DIR/uci*.h
 
     # remove the library files
+    rm $LIB_DIR/uci.sh
     rm $LIB_DIR/libuci.so
+    rm $LIB_DIR/libubox.so
 
     # remove the binary
     rm $BIN_DIR/uci
-    rm $LIB_DIR/uci.sh
 
     # remove the lua files
     rm $LUA_LIB_DIR/uci.so
@@ -325,15 +330,16 @@ CONDIR := $(DESTDIR)/etc/config
 
 install:
 	mkdir -p $(BINDIR) $(INCDIR) $(LUADIR) $(CONDIR)
-	cp uci*.h $(INCDIR)
-	cp uci $(BINDIR)
-	cp uci.sh $(LIBDIR)
-	cp libuci.so $(LIBDIR)
-	cp uci.so $(LUADIR)
-	cp "test" $(CONDIR)
+	cp --preserve=timestamps uci*.h $(INCDIR)
+	cp --preserve=timestamps uci $(BINDIR)
+	cp --preserve=timestamps uci.sh $(LIBDIR)
+	cp --preserve=timestamps libuci.so $(LIBDIR)
+	cp --preserve=timestamps libubox.so $(LIBDIR)
+	cp --preserve=timestamps uci.so $(LUADIR)
+	cp --preserve=timestamps "test" $(CONDIR)
 
 clean:
-	rm -f $(BINDIR)/uci $(BINDIR)/uci.sh $(LIBDIR)/libuci.so $(LIBDIR)/uci.so $(INCDIR)/uci*.h
+	rm -f $(INCDIR)/uci*.h $(BINDIR)/uci $(LIBDIR)/uci.sh $(LIBDIR)/libuci.so $(LIBDIR)/libubox.so $(LIBDIR)/uci.so $(CONDIR)/test
 
 .PHONY: install clean
 EOF

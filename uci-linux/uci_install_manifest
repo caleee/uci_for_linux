@@ -3,6 +3,7 @@
 /usr/include/uci_blob.h
 /usr/include/ucimap.h
 /usr/lib/libuci.so
+/usr/lib/libubox.so
 /usr/bin/uci
 /usr/lib/uci.sh
 /usr/lib/lua/5.1/uci.so

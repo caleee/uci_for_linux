@@ -7,14 +7,15 @@ CONDIR := $(DESTDIR)/etc/config
 
 install:
 	mkdir -p $(BINDIR) $(INCDIR) $(LUADIR) $(CONDIR)
-	cp uci*.h $(INCDIR)
-	cp uci $(BINDIR)
-	cp uci.sh $(LIBDIR)
-	cp libuci.so $(LIBDIR)
-	cp uci.so $(LUADIR)
-	cp "test" $(CONDIR)
+	cp --preserve=timestamps uci*.h $(INCDIR)
+	cp --preserve=timestamps uci $(BINDIR)
+	cp --preserve=timestamps uci.sh $(LIBDIR)
+	cp --preserve=timestamps libuci.so $(LIBDIR)
+	cp --preserve=timestamps libubox.so $(LIBDIR)
+	cp --preserve=timestamps uci.so $(LUADIR)
+	cp --preserve=timestamps "test" $(CONDIR)
 
 clean:
-	rm -f $(BINDIR)/uci $(BINDIR)/uci.sh $(LIBDIR)/libuci.so $(LIBDIR)/uci.so $(INCDIR)/uci*.h
+	rm -f $(INCDIR)/uci*.h $(BINDIR)/uci $(LIBDIR)/uci.sh $(LIBDIR)/libuci.so $(LIBDIR)/libubox.so $(LIBDIR)/uci.so $(CONDIR)/test
 
 .PHONY: install clean
