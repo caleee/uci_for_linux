@@ -1,13 +1,13 @@
 Package: uci-linux-dbgsym
 Package-Type: ddeb
 Source: uci-linux
-Version: 1.0.1
+Version: 1.0.2
 Auto-Built-Package: debug-symbols
 Architecture: amd64
 Maintainer: caleee <caolei@mail.com>
-Installed-Size: 157
-Depends: uci-linux (= 1.0.1)
+Installed-Size: 289
+Depends: uci-linux (= 1.0.2)
 Section: debug
 Priority: optional
 Description: debug symbols for uci-linux
-Build-Ids: 112564731a26630d97076fcbc8d1d6c178e61a8b aaa9adf43edaff8c730949b957b33e0d5d8b9829 b13a018f34ed1b562c484876b185f257660bcd53
+Build-Ids: 03b1d12933a654cca305b12f74cae201aa5676fb 28fde9bafee23636bc3f8cd8f84105de75edbdfb ccbe35905e6887132b4dc7360920771efc932678 e90d7c20e15ebd4434e0177c5c5ded89ae322795

@@ -1,8 +1,8 @@
 Package: uci-linux
-Version: 1.0.1
+Version: 1.0.2
 Architecture: amd64
 Maintainer: caleee <caolei@mail.com>
-Installed-Size: 154
+Installed-Size: 222
 Depends: libc6 (>= 2.34)
 Section: unknown
 Priority: extra
